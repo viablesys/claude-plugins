@@ -11,7 +11,7 @@
       "name": "nmem",
       "source": "./nmem",
       "description": "Cross-session memory for Claude Code. Captures observations, classifies on 5 dimensions, retrieves via MCP tools.",
-      "version": "1.0.0",
+      "version": "1.0.3",
       "author": {
         "name": "viablesys"
       },
