@@ -142,25 +142,18 @@ Update any indexes (e.g., CLAUDE.md library table) with the new document entry.
 Every ensembled document gets a compact fingerprint encoding its provenance:
 
 ```
-5×sonnet→opus corr+fact
+5
 ```
 
-**Format:** `[cohorts]×[researcher model]→[synthesizer model] [verification steps] [modifiers]`
-
-**Fields:**
-- **Cohorts**: researcher counts. `5` = 5 identical-prompt. `5+3` = 5 identical + 3 augmented.
-- **Researcher model**: `sonnet`, `opus`, `haiku`
-- **Synthesizer model**: after `→`. The model that performs correlation + synthesis.
-- **Verification**: `corr` = correlation table built, `fact` = fact-checked against sources. `corr+fact` = both.
-- **Modifiers**: `aug` = augmented prompts used (some cohorts got additional framing beyond the base prompt)
+The fingerprint is just the researcher topology. Everything else is fixed by the pattern: researchers are always `lo` (cost-efficient), synthesizer is always `hi` (high-capability), correlation and fact-checking always happen.
 
 **Examples:**
-- `5×sonnet→opus corr+fact` — standard ensemble, identical prompts, fully verified
-- `5+3×sonnet→opus corr+fact aug` — two cohorts (5 identical, 3 augmented), fully verified
-- `3×sonnet→opus corr` — narrow topic, correlated but not fact-checked
-- `2×sonnet nosynth` — reduced ensemble, no formal synthesis step
+- `5` — standard ensemble, 5 identical-prompt researchers
+- `5×3` — one augmentation round (5 base, 3 augmented)
+- `5×3×3` — two augmentation rounds (maximum, 11 researchers)
+- `7` — larger base cohort, no augmentation
 
-The fingerprint is stored with the document for provenance tracking.
+Each `×N` after the first is an augmentation round of 3 researchers. The fingerprint is stored with the document for provenance tracking.
 
 ## Augmented Ensembles
 
@@ -173,9 +166,9 @@ The base pattern uses identical prompts. An **augmented ensemble** adds cohorts 
 
 The augmented cohort may surface content the identical cohort missed (e.g., fleet deployment angle, security implications, integration patterns). In correlation, augmented researchers are treated identically — independent agreement is the signal regardless of prompt variant.
 
-**Limits:** Maximum 2 augmentation rounds per document (`5×3×3` = 11 researchers ceiling). Beyond that, the document needs to be split or the base cohort re-run with a refined scope.
+**Limits:** Maximum `5×3×3` (11 researchers). Beyond that, the document needs to be split or the base cohort re-run with a refined scope.
 
-**Composability:** An existing ensembled document can be augmented later. Launch 3 new researchers with an augmented prompt, correlate against the existing doc, re-synthesize. The fingerprint grows from `5×...` to `5+3×... aug`.
+**Composability:** An existing ensembled document can be augmented later. Launch 3 new researchers with an augmented prompt, correlate against the existing doc, re-synthesize. The fingerprint grows from `5` to `5×3`.
 
 ## Tuning Parameters
 
