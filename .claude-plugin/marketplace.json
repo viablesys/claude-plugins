@@ -18,6 +18,18 @@
       "repository": "https://github.com/viablesys/nmem",
       "license": "MIT",
       "keywords": ["memory", "context", "cross-session", "mcp"]
+    },
+    {
+      "name": "ensembled-research",
+      "source": "./ensembled-research",
+      "description": "Produce high-quality reference documents by spawning multiple independent researchers and synthesizing via ensemble principles. Convergence weighting, correlation tables, fact-checking, augmented cohorts.",
+      "version": "1.0.0",
+      "author": {
+        "name": "viablesys"
+      },
+      "repository": "https://github.com/viablesys/claude-plugins",
+      "license": "MIT",
+      "keywords": ["research", "ensemble", "synthesis", "library", "reference", "rag"]
     }
   ]
 }

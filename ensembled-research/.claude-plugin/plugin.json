@@ -1,0 +1,9 @@
+{
+  "name": "ensembled-research",
+  "version": "1.0.0",
+  "description": "Produce high-quality reference documents by spawning multiple independent researchers and synthesizing via ensemble principles",
+  "author": { "name": "viablesys" },
+  "repository": "https://github.com/viablesys/claude-plugins",
+  "license": "MIT",
+  "keywords": ["research", "ensemble", "synthesis", "library", "reference"]
+}
