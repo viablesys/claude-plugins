@@ -185,8 +185,7 @@ The augmented cohort may surface content the identical cohort missed (e.g., flee
 
 ## When to Use More or Fewer Researchers
 
-- **3 researchers**: Well-documented, narrow topics (single library, single API)
-- **5 researchers**: Broad topics, systems with many components (messaging systems, databases, frameworks)
+- **5 researchers**: Minimum. The ensemble needs at least 5 independent paths for convergence to be meaningful.
 - **7+ researchers**: Critical reference docs where accuracy matters most, topics with conflicting information online
 
 ## Anti-Patterns
