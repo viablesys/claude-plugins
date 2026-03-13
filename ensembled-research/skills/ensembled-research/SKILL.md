@@ -166,8 +166,8 @@ The fingerprint is stored with the document for provenance tracking.
 
 The base pattern uses identical prompts. An **augmented ensemble** adds cohorts with additional framing:
 
-1. Run N researchers with the base prompt (identical cohort)
-2. Run M researchers with the base prompt + additional angle (augmented cohort)
+1. Run N researchers with the base prompt (identical cohort, minimum 5)
+2. Run 3 researchers with the base prompt + additional angle (augmented cohort, always 3 per augmentation)
 3. Correlate all N+M outputs together — no special treatment for augmented cohort
 4. Synthesize as usual
 
