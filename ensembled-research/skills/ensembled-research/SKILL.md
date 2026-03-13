@@ -173,7 +173,9 @@ The base pattern uses identical prompts. An **augmented ensemble** adds cohorts 
 
 The augmented cohort may surface content the identical cohort missed (e.g., fleet deployment angle, security implications, integration patterns). In correlation, augmented researchers are treated identically — independent agreement is the signal regardless of prompt variant.
 
-**Composability:** An existing ensembled document can be augmented later. Launch M new researchers with an augmented prompt, correlate against the existing doc, re-synthesize. The fingerprint grows from `5×...` to `5+3×... aug`.
+**Limits:** Maximum 2 augmentation rounds per document (`5×3×3` = 11 researchers ceiling). Beyond that, the document needs to be split or the base cohort re-run with a refined scope.
+
+**Composability:** An existing ensembled document can be augmented later. Launch 3 new researchers with an augmented prompt, correlate against the existing doc, re-synthesize. The fingerprint grows from `5×...` to `5+3×... aug`.
 
 ## Tuning Parameters
 
